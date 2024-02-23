@@ -4,7 +4,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/jojiejo/hibank-loan/app/helpers"
+	"github.com/jojiejo/hibank-loan/api/helpers"
 )
 
 const monthPerYear = 12
@@ -36,7 +36,7 @@ func (l *Loan) CalculateInstallments() []Installment {
 
 	var installments []Installment
 	for j := 1; j <= l.Duration; j++ {
-		currentInterest := (l.InterestRate / 100) * currentInstallmentBalance / 12
+		currentInterest := (l.InterestRate / 100 / 360) * 30 * currentInstallmentBalance
 		currentPrinciple := installmentTotal - currentInterest
 		installments = append(installments, Installment{
 			InstallmentNumber:    j,
