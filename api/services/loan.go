@@ -10,10 +10,10 @@ import (
 const monthPerYear = 12
 
 type Loan struct {
-	Plafond      float64    `json:"plafond,omitempty"`
-	Duration     int        `json:"duration,omitempty"`
-	InterestRate float64    `json:"interest_rate,omitempty"`
-	StartDate    *time.Time `json:"start_date,omitempty"`
+	Plafond      float64    `json:"plafond,omitempty" validate:"required,gte=1"`
+	Duration     int        `json:"duration,omitempty" validate:"required,gte=1"`
+	InterestRate float64    `json:"interest_rate,omitempty" validate:"required,gte=1"`
+	StartDate    *time.Time `json:"start_date,omitempty" validate:"required"`
 }
 
 type Installment struct {

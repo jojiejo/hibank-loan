@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 	"github.com/sirupsen/logrus"
 )
 
@@ -14,8 +15,9 @@ const logDirectory = "logs"
 const logFileName = "loan-api.log"
 
 type Server struct {
-	Router *gin.Engine
-	Logger *logrus.Logger
+	Router   *gin.Engine
+	Logger   *logrus.Logger
+	Validate *validator.Validate
 }
 
 func (server *Server) Initialize() {
@@ -23,6 +25,7 @@ func (server *Server) Initialize() {
 	server.Router = gin.New()
 	server.InitializeLogger()
 	server.GenerateRoutes()
+	server.Validate = validator.New(validator.WithRequiredStructEnabled())
 }
 
 func (server *Server) InitializeLogger() {
