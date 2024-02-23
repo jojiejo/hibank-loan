@@ -1,7 +1,5 @@
 # HiBank Loan API
 
-[https://github.com/jojiejo/hibank-loan](https://github.com/jojiejo/hibank-loan)
-
 This is a repository for loan module in HiBank
 
 ## Installation
@@ -9,7 +7,7 @@ This is a repository for loan module in HiBank
 Ensure you have Go installed on your machine. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/yourprojectname.git
+git clone https://github.com/jojiejo/hibank-loan
 ```
 
 Install dependencies:
