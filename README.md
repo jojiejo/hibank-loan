@@ -1,6 +1,7 @@
-# Project Name
+# HiBank Loan API
 
 [https://github.com/jojiejo/hibank-loan](https://github.com/jojiejo/hibank-loan)
+
 This is a repository for loan module in HiBank
 
 ## Installation
